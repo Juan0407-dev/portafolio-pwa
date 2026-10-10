@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>App Shell · Mi Cuaderno</title>
+  <meta name="description" content="Tareas y notas de estudio que funcionan sin conexión.">
+  <meta name="theme-color" content="#0B3D2E">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <h1>Mi Cuaderno</h1>
+    
+  </header>
+
+  <nav class="app-nav" aria-label="Navegación principal">
+    <button data-view="hoy" aria-current="page">Hoy</button>
+    <button data-view="tareas">Tareas</button>
+    <button data-view="notas">Notas</button>
+  </nav>
+
+  <main class="app-main">
+    <section class="view" id="view-hoy">
+      <h2>Hoy</h2>
+      <p><span id="pending-count">0</span> tareas pendientes. Todo lo que guardes queda en tu dispositivo.</p>
+      <ul class="list" id="today-list"></ul>
+      <button class="btn" id="btn-install" hidden>Instalar aplicación</button>
+    </section>
+    <section class="view" id="view-tareas" hidden>
+      <h2>Tareas</h2>
+      <form class="form" id="task-form">
+        <input id="task-input" type="text" placeholder="Nueva tarea" aria-label="Nueva tarea" required maxlength="120">
+        <button class="btn" type="submit">Agregar tarea</button>
+      </form>
+      <ul class="list" id="task-list"></ul>
+    </section>
+    <section class="view" id="view-notas" hidden>
+      <h2>Notas</h2>
+      <form class="form" id="note-form">
+        <textarea id="note-input" placeholder="Escribe un apunte" aria-label="Nueva nota" required maxlength="500"></textarea>
+        <button class="btn" type="submit">Guardar nota</button>
+      </form>
+      <ul class="list" id="note-list"></ul>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
